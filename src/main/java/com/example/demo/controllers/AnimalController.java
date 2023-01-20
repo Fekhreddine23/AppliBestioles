@@ -62,13 +62,20 @@ public String getAnimalList(Model model) {
 	
 	//POST MAPPING pour creer un animal via form
 	@PostMapping("Animal")
-	public String updateAnimal(@Valid Animal animal, BindingResult result) {
+	public String updateAnimal(@Valid Animal animal, BindingResult result, Model model ) {
 		
 		if(result.hasErrors()) {
+			model.addAttribute("species",speciesRepository.findAll());
+			
+		if(animal.getId() != null)	{
+			return "update_animal";
+		}
 			return "create_animal";
+			
 		}
 		System.out.println("animal creer : "+animal);
 		this.animalRepository.save(animal);
+		
 		return "redirect:/Animal";
 	}
 	
