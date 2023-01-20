@@ -1,0 +1,70 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<link rel="stylesheet" th:href="@{/css/main.css}" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta charset="utf-8">
+	<title>Liste des personnes</title>
+</head>
+
+
+
+<body>
+
+
+	<h1>Tableau des personnes</h1>
+
+	<section>
+
+		<div class="table-container">
+			<table class="mainTable">
+				<thead>
+
+					<tr>
+						<th>
+						nom 
+						<div>nom</div>
+						</th>
+
+						<th>
+						prenom 
+						<div>prenom</div>
+						</th>
+
+						  
+
+						<th>
+						age
+						<div>age</div>
+						</th>
+
+						<th>
+						animaux
+						<div>son animal</div>
+						</th>
+
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="person : ${persons}">
+						<td th:text="${person.getLastname()}"> </td>
+						<td th:text="${person.getFirstname()}"> </td>
+						<td th:text="${person.getAge()}"> </td>
+						<td th:text="${person.getAnimals()}"> </td>
+
+						<td><a th:href="@{'/Person/' + ${person.getId()}}"><i class="fa fa-refresh"></i> </a></td>
+						<td><a th:href="@{'/Person/delete/' + ${person.getId()}}"><i class="fa fa-trash"></i> </a></td>
+
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</section>
+
+	<div>
+
+		<input id="listButton" type="button" value="Ajouter une personne" onClick="window.location='/Person/create'">
+
+
+	</div>
+</body>

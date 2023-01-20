@@ -1,0 +1,72 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<link rel="stylesheet" th:href="@{/css/main.css}" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta charset="utf-8">
+	<title>Liste des animaux</title>
+</head>
+
+<body>
+
+	<h1>Tableau des animaux</h1>
+
+
+	<section>
+
+		<div class="table-container">
+
+			<table class="mainTable">
+				<thead>
+
+					<tr>
+						<th>
+						color 
+						<div>color</div>
+						</th>
+
+						<th>
+						name 
+						<div>name</div>
+						</th>
+
+						<th>
+						sex
+						<div>sex</div>
+						</th>
+
+						<th> 
+						Espece
+						<div>espece</div> 
+						</th>
+
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="animal : ${animals}">
+						<td th:text="${animal.getColor()}"> </td>
+						<td th:text="${animal.getName()}"> </td>
+						<td th:text="${animal.getSex()}"> </td>
+						<td th:text="${animal.getSpecies()}"> </td>
+
+
+
+						<td><a th:href="@{'/Animal/' + ${animal.getId()}}"><i class="fa fa-refresh"></i></a></td>
+						<td><a th:href="@{'/Animal/delete/' + ${animal.getId()}}"> <i class="fa fa-trash"></i></a></td>
+					</tr>
+				</tbody>
+			</table>
+
+		</div>
+
+		
+
+	</section>
+	
+	<div>
+
+			<button id="listButton" type="button" onClick="window.location='/Animal/create'"> Ajouter un animal</button>
+
+
+		</div>
+</body>

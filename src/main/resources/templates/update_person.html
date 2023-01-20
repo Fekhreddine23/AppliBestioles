@@ -1,0 +1,58 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<link rel="stylesheet" th:href="@{/css/main.css}" />
+	<meta charset="utf-8">
+	<title>MAJ personne </title>
+</head>
+
+<body>
+
+	<div class="form">
+
+
+		<h1 id="title">Mise a jour personnage</h1>
+		<p id="description">Merci de remplir vos informations pour mettre à jour votre personnage</p>
+
+
+
+		<form th:object="${person}" th:action="@{/Person}" method="post">
+			<input type="hidden" th:field="*{id}" />
+			<div>
+				<label for="age">Age : </label>
+				<input type="text" th:field="*{age}" id="age" />
+				<span th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Error</span>
+
+			</div>
+
+			<div>
+				<label for="age">Nom : </label>
+				<input type="text" th:field="*{firstname}" id="firstname" />
+				<span th:if="${#fields.hasErrors('firstname')}" th:errors="*{firstname}">Error</span>
+			</div>
+
+			<div>
+				<label for="latinName">Prenom :</label>
+				<input type="text" th:field="*{lastname}" id="lastname" />
+				<span th:if="${#fields.hasErrors('lastname')}" th:errors="*{lastname}">Error</span>
+			</div>
+
+			<div>
+				<label for="animals">Animaux :</label>
+				<select id="animals" name="animals" multiple>
+
+					<option th:each="animal : ${animals}" th:value="${animal.id}" th:text="${animal.name}" id="animals">
+						choix animaux</option>
+				</select>
+			</div>
+
+			<div>
+				<input type="submit" class="button" value="MAJ" />
+				<input type="button" class="button" value="Retour" onclick="window.location='/Person'" />
+			</div>
+		</form>
+
+	</div>
+
+
+</body>

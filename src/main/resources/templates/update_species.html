@@ -1,0 +1,37 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<link rel="stylesheet" th:href="@{/css/main.css}" />
+	<meta charset="utf-8">
+	<title>MAJ espece </title>
+</head>
+
+<body>
+
+	<div class="form">
+
+		<h1 id="title">Mise a jour de votre espece d'animal</h1>
+		<p id="description">Merci de remplir vos informations pour mettre à jour votre espece</p>
+
+		<form th:object="${species}" th:action="@{/Species}" method="post">
+			<input type="hidden" th:field="*{id}" />
+			<div>
+				<label for="commonName"> Nom commun : </label>
+				<input type="text" th:field="*{commonName}" id="commonName" />
+				<span th:if="${#fields.hasErrors('commonName')}" th:errors="*{commonName}">Error</span>
+			</div>
+
+			<div>
+				<label for="latinName">Nom Latin: </label>
+				<input type="text" th:field="*{latinName}" id="latinName" />
+				<span th:if="${#fields.hasErrors('latinName')}" th:errors="*{latinName}">Error</span>
+			</div>
+
+			<div>
+				<input type="submit" class="button" value="MAJ" />
+				<input type="button" class="button" value="Retour" onclick="window.location='/Species'" />
+			</div>
+		</form>
+
+	</div>
+</body>

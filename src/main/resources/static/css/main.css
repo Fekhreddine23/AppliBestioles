@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
+
+body {
+	background-color: #7473bc;
+    font-family: 'Montserrat', sans-serif;
+    padding: 20px;
+    color: white;
+}
+
+
+
+
+table{
+	border: 2px solid black;
+}
+
+.form {
+  width: 80%;
+  background-color: #252544;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 25px;
+  max-width: 750px;
+}
+
+form {
+  width: 80%;
+  max-width: 600px;
+  min-width: 300px;
+  margin: 0 auto;
+  padding-bottom: 2em;
+  font-size: 20px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 40px;
+}
+
+p {
+  text-align: center;
+  font-style: italic;
+  font-size: 20px;
+  font-weight: light;
+}
+
+
+
+label {
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+input[type='text']{
+	
+  padding-left: 20px;
+  margin: 5px 0 0 0;
+  width: 100%;
+  min-height: 3em;
+  border-radius: 5px
+}
+
+#listButton, input[type="submit"] {
+  font-family: 'Montserrat';
+  font-weight: bold;
+  color: white;
+  display: block;
+  width: 90%;
+  margin: 30px auto;
+  height: 60px;
+  font-size: 20px;
+  background-color: #37af65;
+  border-radius: 5px ;
+  min-width: 300px;
+}
+
+
+#animals{
+	
+	width:100%;
+}
+
+#animals1{
+	
+	width:100%;
+	padding:10px;
+}
+
+input[type="button"] {
+  font-family: 'Montserrat';
+  font-weight: bold;
+  color: white;
+  display: block;
+  width: 90%;
+  margin: 30px auto;
+  height: 60px;
+  font-size: 20px;
+  background-color: #565647;
+  border-radius: 5px ;
+  min-width: 300px;
+}
+
+input[type="button"]:hover {
+  background-color: #565647; 
+  color: white;
+}
+
+#listButton, input[type="submit"]:hover {
+  background-color: #2b884e; /* Green */
+  color: white;
+}
+/***********ICONS**********/
+
+i{
+	color:aliceblue;
+	height:20px;
+}
+
+/***********TABLEAU**********/
+section {
+  position: relative;
+  padding-top: 37px;
+  width: 95%;
+  margin: 0 auto;
+  background: #252544;
+}
+
+.table-container {
+  overflow-y: auto;
+  height: 20em;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 0;
+  border-left: 1px solid #eee;
+  background: #252544;
+  padding: 10px 25px;
+}
+
+td:first-child,
+th:first-child{
+  border: 0;
+}
+
+tbody tr:nth-child(even) td{
+  background: #272135;
+}
+
+
+th {
+  height: 0;
+  line-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  color: transparent;
+  border: none;
+  white-space: nowrap;
+}
+
+th div{
+  position: absolute;
+  background: transparent;
+  color: #fff;
+  padding: 9px 25px;
+  top: 0;
+  margin-left: -25px;
+  line-height: normal;
+  border-left: 1px solid #eee;
+}
+
+th:first-child div{
+  border: none;
+}

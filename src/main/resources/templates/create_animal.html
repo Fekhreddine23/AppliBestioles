@@ -1,0 +1,63 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<link rel="stylesheet" th:href="@{/css/main.css}" />
+	<meta charset="utf-8">
+	<title>creation d'un animal</title>
+</head>
+
+
+<body>
+
+
+	<div class="form">
+
+
+		<h1 id="title">Creation d'un animal</h1>
+		<p id="description">Merci de remplir vos informations pour créer votre animal</p>
+
+
+		<form th:object="${animal}" th:action="@{/Animal}" method="post">
+			<input type="hidden" th:field="*{id}" />
+
+
+			<div>
+				<label for="color">Couleur : </label>
+				<input type="text" th:field="*{color}" id="color" />
+				<span th:if="${#fields.hasErrors('color')}" th:errors="*{color}">Error</span>
+			</div>
+
+
+			<div>
+				<label for="name">Nom : </label>
+				<input type="text" th:field="*{name}" id="name" />
+				<span th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Error</span>
+			</div>
+
+			<div>
+				<label for="sex">Genre : </label>
+				<input type="text" th:field="*{sex}" id="sex" />
+				<span th:if="${#fields.hasErrors('sex')}" th:errors="*{sex}">Error</span>
+			</div>
+
+
+			<div>
+				<label for="species">Espece: </label>
+
+				<select id="animals" name="species" multiple>
+
+					<option th:each="specie : ${species}" th:value="${specie.id}" th:text="${specie.CommonName}"
+						id="species_id">
+						choix especes </option>
+				</select>
+			</div>
+
+
+			<div>
+				<input type="submit" class="button" value="Creer" />
+				<input type="button" class="button" value="Retour" onclick="window.location='/Animal'" />
+			</div>
+		</form>
+
+	</div>
+</body>
